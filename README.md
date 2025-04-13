@@ -8,13 +8,10 @@ TODO: Add screenshots.
 
 ## Tasks
 
-[ ] Setup the CPU part.
-
-[ ] Setup the proc part where we have a list of running processes.
-
-[ ] Setup the mem part.
-
-[ ] Setup the disks part where we have all partitions. Each latter has a used & free.
+- [ ] Setup the CPU part.
+- [ ] Setup the proc part where we have a list of running processes.
+- [ ] Setup the mem part.
+- [ ] Setup the disks part where we have all partitions. Each latter has a used & free.
 
 ## Contributing
 
