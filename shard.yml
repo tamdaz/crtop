@@ -1,0 +1,23 @@
+name: crtop
+version: 0.1.0
+
+authors:
+  - tamdaz <tamda.zohir.pro@gmail.com>
+
+targets:
+  crtop:
+    main: src/bcrytop.cr
+
+dependencies:
+  term-screen:
+    github: crystal-term/screen
+  ncurses:
+    github: SamualLB/ncurses
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+
+crystal: '>= 1.16.0'
+
+license: MIT

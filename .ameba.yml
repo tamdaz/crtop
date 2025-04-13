@@ -1,0 +1,4 @@
+# Ameba config
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
