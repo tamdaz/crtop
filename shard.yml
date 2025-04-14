@@ -6,7 +6,7 @@ authors:
 
 targets:
   crtop:
-    main: src/bcrytop.cr
+    main: src/crtop.cr
 
 dependencies:
   term-screen:
