@@ -1,5 +1,14 @@
 # crtop
 
+```
+ ██████╗██████╗ ████████╗ ██████╗ ██████╗
+██╔════╝██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
+██║     ██████╔╝   ██║   ██║   ██║██████╔╝
+██║     ██╔══██╗   ██║   ██║   ██║██╔═══╝
+╚██████╗██║  ██║   ██║   ╚██████╔╝██║
+ ╚═════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝
+```
+
 crtop is a program that monitors all processes, CPU, RAM and disks. Inspired by https://github.com/aristocratos/btop.
 
 ## Screenshots
