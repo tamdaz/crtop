@@ -1,4 +1,4 @@
-module BCrytop::Utils
+module Crtop::Utils
   # Generate a graph to represent the CPU usage.
   def self.generate_cpu_graph(percentages_array : Array(Number)) : String
     output = String::Builder.new("")

@@ -1,4 +1,4 @@
-class BCrytop::Window
+class Crtop::Window
   class_getter windows = {} of Symbol => NCurses::Window
 
   def self.init_windows
@@ -7,9 +7,9 @@ class BCrytop::Window
     NCurses.no_echo
     NCurses.set_cursor NCurses::Cursor::Invisible
 
-    windows[:cpu] = NCurses::Window.new(15, Term::Screen.width, 0, 0)
-    windows[:proc] = NCurses::Window.new(Term::Screen.height - 15, (Term::Screen.width // 2), 15, 0)
-    windows[:disks] = NCurses::Window.new(Term::Screen.height - 15, (Term::Screen.width // 2), 15, (Term::Screen.width // 2))
+    [:cpu, :proc, :disks].each do |name|
+      windows[name] = create_window(name).as(NCurses::Window)
+    end
   end
 
   # Gets the window
@@ -18,10 +18,14 @@ class BCrytop::Window
   end
 
   def self.create_window(name : Symbol)
+    half_size = Term::Screen.width // 2
+    remaining_size = Term::Screen.width % 2
+    cpu_height = Term::Screen.height - 15
+
     case name
     when :cpu then NCurses::Window.new(15, Term::Screen.width, 0, 0)
-    when :proc then NCurses::Window.new(Term::Screen.height - 15, (Term::Screen.width // 2), 15, 0)
-    when :disks then NCurses::Window.new(Term::Screen.height - 15, (Term::Screen.width // 2), 15, (Term::Screen.width // 2))
+    when :proc then NCurses::Window.new(cpu_height, half_size, 15, 0)
+    when :disks then NCurses::Window.new(cpu_height, half_size + remaining_size, 15, half_size)
     end
   end
 
@@ -37,7 +41,9 @@ class BCrytop::Window
         windows[name].border
         windows[name].refresh
 
-        sleep tick
+        windows[name].set_color(-1)
+
+        sleep tick.seconds
 
         # Recreate the window only if the screen size has changed.
         if Term::Screen.width != previous_width || Term::Screen.height != previous_height
@@ -47,8 +53,6 @@ class BCrytop::Window
           previous_width = Term::Screen.width
           previous_height = Term::Screen.height
         end
-
-        NCurses.erase
       end
     end
   end

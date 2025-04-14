@@ -1,4 +1,4 @@
-module BCrytop
+module Crtop
   def self.init_colors
     # Between 10..15 => Grey shade for logo.
     LibNCurses.init_pair(1, 10, -1)
@@ -11,7 +11,7 @@ module BCrytop
     if NCurses.can_change_color?
       NCurses.use_default_colors
 
-      # Between 10..15 => Change foreground color with RGB for the BCRYTOP logo.
+      # Between 10..15 => Change foreground color with RGB for the Crtop logo.
       NCurses.change_color(10, 1000, 1000, 1000)
       NCurses.change_color(11, 900, 900, 900)
       NCurses.change_color(12, 800, 800, 800)
